@@ -1,0 +1,29 @@
+version: '2.1'
+services:
+  dopApp-api:
+    build: .
+    environment:
+      PORT: '5000'
+      SHOW_URLS: 'true'
+      
+      LUGARES_URL: '35.227.46.47'
+      LUGARES_PORT: '4000'
+      LUGARES_ENTRY: 'lugares/'
+
+      USUARIOS_URL: '35.227.46.47'
+      USUARIOS_PORT: '4001'
+      USUARIOS_ENTRY: 'usuarios/'
+
+      CITAS_URL: '35.227.46.47'
+      CITAS_PORT: '4002'
+      CITAS_ENTRY: 'citas/'
+
+      GUSTOS_URL: '35.227.46.47'
+      GUSTOS_PORT: '4003'
+      GUSTOS_ENTRY: 'gustos/'
+
+      EMPAREJADOR_URL: '35.227.46.47'
+      EMPAREJADOR_PORT: '4004'
+      EMPAREJADOR_ENTRY: 'emparejadores/'
+    ports:
+      - '5000:5000'
