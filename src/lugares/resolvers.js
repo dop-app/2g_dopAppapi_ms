@@ -5,17 +5,18 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-		allCourses: (_) =>
+		alllugares: (_) =>
 			getRequest(URL, ''),
-		courseById: (_, { id }) =>
+			 //generalRequest(`${URL}/`, 'GET'),
+		lugarById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),
 	},
 	Mutation: {
-		createCourse: (_, { course }) =>
+		createLugar: (_, { course }) =>
 			generalRequest(`${URL}`, 'POST', course),
-		updateCourse: (_, { id, course }) =>
+		updateLugar: (_, { id, course }) =>
 			generalRequest(`${URL}/${id}`, 'PUT', course),
-		deleteCourse: (_, { id }) =>
+		deleteLugar: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'DELETE')
 	}
 };

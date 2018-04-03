@@ -1,14 +1,14 @@
 FROM node:carbon-slim
 
 # Create app directory
-WORKDIR /git/dopApp-api
+WORKDIR /git/dop-api
 
 # Install app dependencies
-COPY package.json /git/dopApp-api/
+COPY package.json /git/dop-api/
 RUN npm install
 
 # Bundle app source
-COPY . /git/dopApp-api/
+COPY . /git/dop-api/
 RUN npm run prepublish
 
 CMD [ "npm", "run", "runServer" ]

@@ -1,13 +1,13 @@
 version: '2.1'
 services:
-  dopApp-api:
+  dop-api:
     build: .
     environment:
       PORT: '5000'
       SHOW_URLS: 'true'
       
       LUGARES_URL: '35.227.46.47'
-      LUGARES_PORT: '4000'
+      LUGARES_PORT: '4005'
       LUGARES_ENTRY: 'lugares/'
 
       USUARIOS_URL: '35.227.46.47'
