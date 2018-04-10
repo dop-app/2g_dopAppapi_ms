@@ -5,17 +5,17 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-		allGrades: (_) =>
+		allUsers: (_) =>
 			getRequest(URL, ''),
-		gradeById: (_, { id }) =>
+		userById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),
 	},
 	Mutation: {
-		createGrade: (_, { grade }) =>
-			generalRequest(`${URL}`, 'POST', grade),
-		updateGrade: (_, { id, grade }) =>
-			generalRequest(`${URL}/${id}`, 'PUT', grade),
-		deleteGrade: (_, { id }) =>
+		createUser: (_, { user }) =>
+			generalRequest(`${URL}`, 'POST', user),
+		updateUser: (_, { id, user }) =>
+			generalRequest(`${URL}/${id}`, 'PUT', user),
+		deleteUser: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'DELETE')
 	}
 };

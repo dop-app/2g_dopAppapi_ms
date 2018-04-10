@@ -1,27 +1,30 @@
-export const studentsTypeDef = `
-type Student {
-    id: Int!
-    name: String!
-    lastname: String!
-    email: String!
-    code: Int!
+export const citasTypeDef = `
+type Cita {
+    id:          Int!
+    cita:        String!
+    lugar:       Int!
+    fecha:       String!
+    personas:    [Int]!
+    estado:      String!
+    visibilidad: Boolean!
 }
-
-input StudentInput {
-    name: String!
-    lastname: String!
-    email: String!
-    code: Int!
+input CitaInput {
+    cita:        String!
+    lugar:       Int!
+    fecha:       String!
+    personas:    [Int]!
+    estado:      String!
+    visibilidad: Boolean!
 }
 `;
 
-export const studentsQueries = `
-    allStudents: [Student]!
-    studentById(id: Int!): Student!
+export const citasQueries = `
+  citaById(id: Int!): Cita!
+  citaByPersonaId(id: Int!): [Cita]!
 `;
 
-export const studentsMutations = `
-    createStudent(student: StudentInput!): Student!
-    deleteStudent(id: Int!): Student!
-    updateStudent(id: Int!, student: StudentInput!): Student!
+export const citasMutations = `
+    createCita(cita: CitaInput!): Cita!
+    deleteCita(id: Int!): Cita!
+    updateCita(id: Int!, cita: CitaInput!): Cita!
 `;

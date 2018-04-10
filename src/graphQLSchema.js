@@ -9,12 +9,6 @@ import {
 	lugaresQueries,
 	lugaresTypeDef
 } from './lugares/typeDefs';
-/*
-import {
-	usuariosMutations,
-	usuariosQueries,
-	usuariosTypeDef
-} from './usuarios/typeDefs';
 
 import {
 	citasMutations,
@@ -29,14 +23,15 @@ import {
 } from './gustos/typeDefs';
 
 import {
-	emparejadoresMutations,
-	emparejadoresQueries,
-	emparejadoresTypeDef
-} from './emparejadores/typeDefs';
-*/
+	usuariosMutations,
+	usuariosQueries,
+	usuariosTypeDef
+} from './usuarios/typeDefs';
 
 import lugaresResolvers from './lugares/resolvers';
-/*import usuariosResolvers from './usuarios/resolvers';
+import citasResolvers from './citas/resolvers';
+import gustosResolvers from './gustos/resolvers';
+import usuariosResolvers from './usuarios/resolvers';/*
 import citasResolvers from './citas/resolvers';
 import gustosResolvers from './gustos/resolvers';
 import emparejadoresResolvers from './emparejadores/resolvers';
@@ -45,24 +40,25 @@ import emparejadoresResolvers from './emparejadores/resolvers';
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		lugaresTypeDef/*,
+		lugaresTypeDef,
+		citasTypeDef,		
 		usuariosTypeDef,
-		citasTypeDef,
-		gustosTypeDef,
+		gustosTypeDef/*,,				
 		emparejadoresTypeDef*/
 	],
 	[
-		lugaresQueries/*,
-		usuariosQueries,
+		lugaresQueries,
 		citasQueries,
-		gustosQueries,
+		usuariosQueries,
+		gustosQueries/*,		
+		,
 		emparejadoresQueries*/
 	],
 	[
-		lugaresMutations/*,
-		usuariosMutations,
+		lugaresMutations,
 		citasMutations,
-		gustosMutations,
+		usuariosMutations,
+		gustosMutations/*,		
 		emparejadoresMutations*/
 	]
 );
@@ -72,6 +68,6 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		lugaresResolvers/*,usuariosResolvers,citasResolvers,gustosResolvers,emparejadoresResolvers*/
+		lugaresResolvers,citasResolvers,usuariosResolvers,gustosResolvers/*,emparejadoresResolvers*/
 	)
 });

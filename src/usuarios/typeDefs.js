@@ -1,25 +1,32 @@
-export const gradesTypeDef = `
-type Grade {
+export const usuariosTypeDef = `
+type User {
     id: Int!
-    student_id: Int!
-    course_code: Int!
-    grade: Float!
+    name: String!
+    email: String!
+    gender: String!
+    picture: String!
+    age: String!
+    oauth_token: String!
 }
 
-input GradeInput {
-    student_id: Int!
-    course_code: Int!
-    grade: Float!
+
+input UserInput {
+    name: String!
+    email: String!
+    gender: String!
+    picture: String!
+    age: String!
+
 }
 `;
 
-export const gradesQueries = `
-    allGrades: [Grade]!
-    gradeById(id: Int!): Grade!
+export const usuariosQueries = `
+    allUsers: [User]!
+    userById(id: Int!): User!
 `;
 
-export const gradesMutations = `
-    createGrade(grade: GradeInput!): Grade!
-    deleteGrade(id: Int!): Grade!
-    updateGrade(id: Int!, grade: GradeInput!): Grade!
+export const usuariosMutations = `
+    createUser(user: UserInput!): User!
+    deleteUser(id: Int!): User!
+    updateUser(id: Int!, user: UserInput!): User!
 `;
