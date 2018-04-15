@@ -14,6 +14,7 @@ type Subcategory {
     category_id: Int!
     created_at: String!
     updated_at: String!
+    category: Category
 }
 
 type Pleasure {
@@ -24,6 +25,7 @@ type Pleasure {
     subcategory_id: Int!
     created_at: String!
     updated_at: String!
+    subcategory: Subcategory
 }
 
 input CategoryInput {
