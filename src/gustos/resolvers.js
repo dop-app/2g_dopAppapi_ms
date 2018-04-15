@@ -26,11 +26,11 @@ const resolvers = {
 		pleasuresBySubcategory: (_, { subcategory_id }) =>
 			generalRequest(`${URL}pleasures?by_subcategory=${subcategory_id}`, 'GET'),
 		pleasureByUser: (_, { user_id }) =>
-			generalRequest(`${URL}pleasures/${user_id}`, 'GET'),
+		        generalRequest(`${URL}pleasures?by_user=${user_id}`, 'GET'),
 		pleasuresByCategory: (_, { category_id }) =>
-			generalRequest(`${URL}pleasures?by_category=${category_id}`, 'GET'),
+		        generalRequest(`${URL}pleasures?by_category=${category_id}`, 'GET'),
 		pleasuresByName: (_, { name }) =>
-			generalRequest(`${URL}pleasures?by_name=${name}`, 'GET')
+		        generalRequest(`${URL}pleasures?by_name=${name}`, 'GET')
 	},
 	Mutation: {
 		createCategory: (_, { category }) =>

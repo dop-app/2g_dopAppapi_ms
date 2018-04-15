@@ -56,7 +56,7 @@ export const gustosQueries = `
     allPleasures: [Pleasure]!
     pleasureById(id: Int!): Pleasure!
     pleasuresBySubcategory(subcategory_id: Int!): [Pleasure]
-    pleasureByUser(user_id: Int!): Pleasure!
+    pleasureByUser(user_id: Int!): [Pleasure]
     pleasuresByCategory(category_id: Int!): [Pleasure]
     pleasuresByName(name: String!): [Pleasure]
 `;
