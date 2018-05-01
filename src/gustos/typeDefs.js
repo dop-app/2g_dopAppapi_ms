@@ -6,7 +6,6 @@ type Category {
     created_at: String!
     updated_at: String!
 }
-
 type Subcategory {
     id: Int!
     name: String!
@@ -14,8 +13,8 @@ type Subcategory {
     category_id: Int!
     created_at: String!
     updated_at: String!
+    category: Category
 }
-
 type Pleasure {
     id: Int!
     name: String!
@@ -24,19 +23,17 @@ type Pleasure {
     subcategory_id: Int!
     created_at: String!
     updated_at: String!
+    subcategory: Subcategory
 }
-
 input CategoryInput {
     name: String!
     description: String!
 }
-
 input SubcategoryInput {
     name: String!
     description: String!
     category_id: Int!
 }
-
 input PleasureInput {
     name: String!
     description: String!
@@ -56,7 +53,7 @@ export const gustosQueries = `
     allPleasures: [Pleasure]!
     pleasureById(id: Int!): Pleasure!
     pleasuresBySubcategory(subcategory_id: Int!): [Pleasure]
-    pleasureByUser(user_id: Int!): Pleasure!
+    pleasureByUser(user_id: Int!): [Pleasure]
     pleasuresByCategory(category_id: Int!): [Pleasure]
     pleasuresByName(name: String!): [Pleasure]
 `;
@@ -68,7 +65,7 @@ export const gustosMutations = `
     createSubcategory(subcategory: SubcategoryInput!): Subcategory!
     deleteSubcategory(id: Int!): Subcategory!
     updateSubcategory(id: Int!, subcategory: SubcategoryInput!): Subcategory!
-    createPleasure(pleasure: PleasureInput!): Subcategory!
-    deletePleasure(id: Int!): Pleasure!
+    createPleasure(pleasure: PleasureInput!): Pleasure!
+    deletePleasure(id: Int!): Pleasure
     updatePleasure(id: Int!, pleasure: PleasureInput!): Pleasure!
 `;
