@@ -70,7 +70,7 @@ export const gustosMutations = `
     createSubcategory(subcategory: SubcategoryInput!): Subcategory!
     deleteSubcategory(id: Int!): Subcategory!
     updateSubcategory(id: Int!, subcategory: SubcategoryInput!): Subcategory!
-    createPleasure(pleasure: PleasureInput!): Subcategory!
-    deletePleasure(id: Int!): Pleasure!
+    createPleasure(pleasure: PleasureInput!): Pleasure!
+    deletePleasure(id: Int!): Pleasure
     updatePleasure(id: Int!, pleasure: PleasureInput!): Pleasure!
 `;
