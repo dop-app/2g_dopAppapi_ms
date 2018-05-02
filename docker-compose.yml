@@ -10,7 +10,7 @@ services:
       LUGARES_PORT: '4005'
       LUGARES_ENTRY: 'lugares'
 
-      USUARIOS_URL: 'usuarios-ms'
+      USUARIOS_URL: 'users-ms'
       USUARIOS_PORT: '4001'
       USUARIOS_ENTRY: 'users'
 
