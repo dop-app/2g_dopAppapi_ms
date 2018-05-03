@@ -5,6 +5,12 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { mergeSchemas } from './utilities';
 
 import {
+    authMutations,
+    authTypeDef
+} from './auth/typeDefs';
+
+
+import {
 	lugaresMutations,
 	lugaresQueries,
 	lugaresTypeDef
@@ -33,7 +39,7 @@ import {
 	matchQueries,
 	matchTypeDef
 } from './match/typeDefs';
-
+import authResolvers from './auth/resolvers';
 import lugaresResolvers from './lugares/resolvers';
 import citasResolvers from './citas/resolvers';
 import gustosResolvers from './gustos/resolvers';
@@ -48,7 +54,8 @@ const mergedTypeDefs = mergeSchemas(
 		citasTypeDef,		
 		usuariosTypeDef,
 		gustosTypeDef,
-		matchTypeDef
+		matchTypeDef,
+		authTypeDef
 	],
 	[
 		lugaresQueries,
@@ -62,7 +69,8 @@ const mergedTypeDefs = mergeSchemas(
 		citasMutations,
 		usuariosMutations,
 		gustosMutations,
-		matchMutations
+		matchMutations,
+		authMutations
 	]
 );
 
@@ -71,6 +79,7 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		lugaresResolvers,citasResolvers,usuariosResolvers,gustosResolvers, matchResolvers
+		lugaresResolvers,citasResolvers,usuariosResolvers,
+		gustosResolvers, matchResolvers,authResolvers
 	)
 });
