@@ -1,0 +1,29 @@
+version: '2.1'
+services:
+  dop-api:
+    build: .
+    environment:
+      PORT: '5000'
+      SHOW_URLS: 'true'
+      
+      LUGARES_URL: 'lugares-ms'
+      LUGARES_PORT: '4005'
+      LUGARES_ENTRY: 'lugares'
+
+      USUARIOS_URL: 'usuarios-ms'
+      USUARIOS_PORT: '4001'
+      USUARIOS_ENTRY: 'users'
+
+      CITAS_URL: 'citas-ms'
+      CITAS_PORT: '4002'
+      CITAS_ENTRY: 'citas'
+
+      GUSTOS_URL: 'gutos-ms'
+      GUSTOS_PORT: '4006'
+      GUSTOS_ENTRY: ''
+
+      EMPAREJADOR_URL: 'emparejadores-ms'
+      EMPAREJADOR_PORT: '4004'
+      EMPAREJADOR_ENTRY: 'emparejadores/'
+    ports:
+      - '5000:5000'
