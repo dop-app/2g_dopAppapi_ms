@@ -16,8 +16,21 @@ input UserInput {
     gender: String!
     picture: String!
     age: String!
-
 }
+
+type token {
+    jwt: String   
+}
+
+input authInput {
+    auth: Auth
+}
+
+input Auth {
+    email: String!
+    password: String!
+}
+
 `;
 
 export const usuariosQueries = `
@@ -26,7 +39,9 @@ export const usuariosQueries = `
 `;
 
 export const usuariosMutations = `
+    createToken(auth: authInput!): token!
     createUser(user: UserInput!): User!
     deleteUser(id: Int!): User!
-    updateUser(id: Int!, user: UserInput!): User!
+    updateUser(id: Int!, user: UserInput!): User! 
+
 `;

@@ -9,7 +9,6 @@ import graphQLSchema from './graphQLSchema';
 
 import { formatErr } from './utilities';
 
-const SECRET = "ajhfshflkjfFSDFSjwehrkwjr;qek";
 const app = new Koa();
 const router = new KoaRouter();
 const PORT = process.env.PORT || 5000;
@@ -31,7 +30,11 @@ app.use(async (ctx, next) => {
 // GraphQL
 const graphql = graphqlKoa((ctx) => ({
 	schema: graphQLSchema,
+<<<<<<< HEAD
 	context: { token: ctx.state.token ,SECRET },
+=======
+	context: { token: ctx.state.token },
+>>>>>>> 54331c2a12a10ebc6635fe48b9ace5f624ec1dc6
 	formatError: formatErr
 }));
 router.post('/graphql', koaBody(), graphql);
