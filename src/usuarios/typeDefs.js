@@ -25,10 +25,10 @@ type token {
 }
 
 input autInput {
-    auth: aut
+    auth: auth
 }
 
-input aut {
+input auth {
     email: String!
     password: String!
 }
