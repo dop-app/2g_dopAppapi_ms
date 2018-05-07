@@ -7,6 +7,7 @@ type User {
     picture: String!
     age: String!
     oauth_token: String!
+
 }
 
 
@@ -16,6 +17,7 @@ input UserInput {
     gender: String!
     picture: String!
     age: String!
+    password: String!
 }
 
 type token {
@@ -23,10 +25,10 @@ type token {
 }
 
 input autInput {
-    aut: Aut
+    auth: aut
 }
 
-input Aut {
+input aut {
     email: String!
     password: String!
 }
@@ -39,7 +41,7 @@ export const usuariosQueries = `
 `;
 
 export const usuariosMutations = `
-    createToken(aut: autInput!): token!
+    createToken(auth: autInput!): token!
     createUser(user: UserInput!): User!
     deleteUser(id: Int!): User!
     updateUser(id: Int!, user: UserInput!): User! 
