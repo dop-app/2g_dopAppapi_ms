@@ -22,11 +22,11 @@ type token {
     jwt: String   
 }
 
-input authInput {
-    auth: Auth
+input autInput {
+    aut: Aut
 }
 
-input Auth {
+input Aut {
     email: String!
     password: String!
 }
@@ -39,7 +39,7 @@ export const usuariosQueries = `
 `;
 
 export const usuariosMutations = `
-    createToken(auth: authInput!): token!
+    createToken(aut: autInput!): token!
     createUser(user: UserInput!): User!
     deleteUser(id: Int!): User!
     updateUser(id: Int!, user: UserInput!): User! 

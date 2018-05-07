@@ -11,8 +11,8 @@ const resolvers = {
 			generalRequest(`${URL}/${id}`, 'GET'),
 	},
 	Mutation: {
-		createToken: (_, { auth }) =>
-			generalRequest(`http://${url}:${port}/user_token`, 'POST', auth),
+		createToken: (_, { aut }) =>
+			generalRequest(`http://${url}:${port}/user_token`, 'POST', aut),
 		createUser: (_, { user }) =>
 			generalRequest(`${URL}`, 'POST', user),
 		updateUser: (_, { id, user }) =>
