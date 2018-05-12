@@ -11,7 +11,7 @@ services:
       LUGARES_ENTRY: 'lugares'
 
 
-      USUARIOS_URL: 'users-ms'
+      USUARIOS_URL: 'users-ms' #'35.203.25.118' 
       USUARIOS_PORT: '4001'
       USUARIOS_ENTRY: 'users'
 

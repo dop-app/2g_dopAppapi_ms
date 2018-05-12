@@ -1,5 +1,6 @@
 export const authTypeDef = `
-    type Auth {
+
+    type auth {
         email: String!
         password: String!
         answer: String!
@@ -8,8 +9,13 @@ export const authTypeDef = `
         email: String!
         password: String!
     }
+
+    type log{
+        token: String
+        auth: auth!
+    }
 `;
 
 export const authMutations = `
-    auth(auth: AuthInput!): Auth!
+    auth(auth: AuthInput!): log!
 `;
