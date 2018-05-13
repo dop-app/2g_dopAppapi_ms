@@ -20,24 +20,19 @@ input UserInput {
     password: String!
 }
 
-input autInput {
-    auth: Auth
-}
-
-input Auth {
-    email: String!
-    password: String!
+type valid{
+    valid: Boolean!
 }
 
 `;
 
 export const usuariosQueries = `
-    allUsers: [User]!
-    userById(id: Int!): User!
+    allUsers: [User]
+    userById(id: Int!): User
+    validation(idsession:Int!,token:String!): valid!
 `;
 
-export const usuariosMutations = `
-    
+export const usuariosMutations = `    
     createUser(user: UserInput!): User!
     deleteUser(id: Int!): User!
     updateUser(id: Int!, user: UserInput!): User! 

@@ -9,6 +9,8 @@ const resolvers = {
 			getRequest(URL, ''),
 		userById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),
+		validation: (_, { idsession, token }) =>
+			generalRequest(`http://${url}:${port}/validation`, 'POST', { idsession, token })
 	},
 	Mutation: {
 		//createToken: (_, { auth }) =>
