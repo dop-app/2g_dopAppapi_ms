@@ -11,8 +11,9 @@ export const authTypeDef = `
     }
 
     type log{
-        token: String
         auth: auth!
+        token: String        
+        id: Int
     }
 `;
 

@@ -35,7 +35,7 @@ type ListPossibleFiltered {
 
 export const matchQueries = `
     allMatch: [Match]!
-    matchById(id: Int!): [Match]!
+    matchById(id: Int!): Match!
 `;
 
 export const matchMutations = `
