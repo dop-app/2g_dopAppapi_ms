@@ -30,15 +30,6 @@ input UserInput {
     password: String!
 }
 
-input User {
-    name: String
-    email: String
-    gender: String
-    picture: String
-    age: String
-    password: String
-}
-
 type valid{
     valid: Boolean!
 }
