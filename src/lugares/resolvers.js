@@ -12,10 +12,10 @@ const resolvers = {
 			generalRequest(`${URL}/${id}`, 'GET'),
 	},
 	Mutation: {
-		createLugar: (_, { course }) =>
-			generalRequest(`${URL}`, 'POST', course),
-		updateLugar: (_, { id, course }) =>
-			generalRequest(`${URL}/${id}`, 'PUT', course),
+		createLugar: (_, { lugar }) =>
+			generalRequest(`${URL}`, 'POST', lugar),
+		updateLugar: (_, { id, lugar }) =>
+			generalRequest(`${URL}/${id}`, 'PUT', lugar),
 		deleteLugar: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'DELETE')
 	}
