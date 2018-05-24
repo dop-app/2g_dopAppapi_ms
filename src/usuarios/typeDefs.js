@@ -30,6 +30,14 @@ input UserInput {
     password: String!
 }
 
+input UserInputs {
+    name: String!
+    email: String!
+    gender: String!
+    picture: String!
+    age: String!
+}
+
 type valid{
     valid: Boolean!
 }
@@ -45,7 +53,7 @@ export const usuariosQueries = `
 export const usuariosMutations = `    
     createUser(user: UserInput!): User!
     deleteUser(id: Int!): User!
-    updateUser(id: Int!, user: UserInput!): UpUser! 
+    updateUser(id: Int!, user: UserInputs!): UpUser! 
 
 `;
 
