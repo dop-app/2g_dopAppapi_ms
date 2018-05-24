@@ -21,9 +21,15 @@ type Point
 }
 
 input LugarInput {
-    code: Int!
-    name: String!
-    credits: Int!
+    nombre: String!
+    nivelPrecio: String!
+    ubicacion: Point!
+    direccion: String
+    horario: String
+    calificacion: String
+    tipo: String
+    ciudad: String
+    pais: String
 }
 `;
 
