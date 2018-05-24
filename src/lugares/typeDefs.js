@@ -1,6 +1,6 @@
 export const lugaresTypeDef = `
 type Lugar {
-    _id: String!
+    _id: Int!
     nombre: String!
     nivelPrecio: String!
     ubicacion: Point!
