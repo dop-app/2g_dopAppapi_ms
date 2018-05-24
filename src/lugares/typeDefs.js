@@ -46,3 +46,9 @@ export const lugaresQueries = `
     alllugares: [Lugar]!  
     lugarById(id: String!): Lugar! 
 `;
+
+export const lugaresMutations = `
+    createLugar(lugar: LugarInput): Lugar!
+    deleteLugar(id: Int!): Lugar!
+    updateLugar(id: Int!): Lugar!
+`;
